@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ehwheqjn6b8f"]
+
+[sub_resource type="Gradient" id="Gradient_f8hc2"]
+colors = PackedColorArray(0.346175, 0.151328, 0.00253615, 1, 0.321569, 0.231373, 0.211765, 0.427451)
+
+[node name="Walking" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 50
+lifetime = 0.5
+speed_scale = 0.5
+randomness = 0.2
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+spread = 10.0
+gravity = Vector2(0, 15)
+initial_velocity_min = 25.0
+initial_velocity_max = 35.0
+damping_min = 0.5
+damping_max = 5.0
+angle_min = -487.3
+angle_max = -487.3
+color_ramp = SubResource("Gradient_f8hc2")

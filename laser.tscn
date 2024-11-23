@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://crymlj7nv627q"]
+
+[sub_resource type="Curve" id="Curve_o71da"]
+_data = [Vector2(0.0502793, 0.172447), 0.0, 0.0, 0, 0, Vector2(0.97486, 0.879572), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kaqh0"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0.109804)
+
+[node name="Laser" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 500
+spread = 1.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_o71da")
+color_ramp = SubResource("Gradient_kaqh0")
