@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=4 uid="uid://c1nj4rphqreki"]
+
+[ext_resource type="Texture2D" uid="uid://bnpfek43copel" path="res://pixil-frame-0.png" id="1_qeunv"]
+
+[sub_resource type="Gradient" id="Gradient_dh083"]
+offsets = PackedFloat32Array(0.00333333, 0.383333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.780707, 0, 0.580392, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_1dmnu"]
+colors = PackedColorArray(0.00784314, 0.772549, 1, 0.654902, 1, 1, 1, 0.298039)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fvxkm"]
+texture = ExtResource("1_qeunv")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5td51"]
+sources/0 = SubResource("TileSetAtlasSource_fvxkm")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(553, 9)
+amount = 500
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 1)
+gravity = Vector2(0, 100)
+angular_velocity_min = 10.0
+angular_velocity_max = 10.0
+linear_accel_min = 50.0
+linear_accel_max = 50.0
+tangential_accel_min = -25.0
+tangential_accel_max = 25.0
+angle_min = 90.0
+angle_max = 90.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_dh083")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(566, -137)
+amount = 500
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 1)
+gravity = Vector2(0, 30)
+angular_velocity_min = 10.0
+angular_velocity_max = 10.0
+linear_accel_min = 50.0
+linear_accel_max = 50.0
+tangential_accel_min = -25.0
+tangential_accel_max = 25.0
+angle_min = 90.0
+angle_max = 90.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_dh083")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+position = Vector2(566, -137)
+amount = 500
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 1)
+gravity = Vector2(0, 30)
+angular_velocity_min = 10.0
+angular_velocity_max = 10.0
+linear_accel_min = 50.0
+linear_accel_max = 50.0
+tangential_accel_min = -25.0
+tangential_accel_max = 25.0
+angle_min = 90.0
+angle_max = 90.0
+scale_amount_min = 15.0
+scale_amount_max = 15.0
+color_ramp = SubResource("Gradient_1dmnu")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(566, -137)
+tile_map_data = PackedByteArray("AADe/y8AAAAAAAAAAADi/y8AAAAAAAAAAADm/y8AAAAAAAAAAADq/y8AAAAAAAAAAADu/y8AAAAAAAAAAADy/y8AAAAAAAAAAAD2/y8AAAAAAAAAAAD6/y8AAAAAAAAAAAD+/y8AAAAAAAAAAAACAC8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_5td51")
