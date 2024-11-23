@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dho7p5ok3nad0"]
+
+[ext_resource type="Texture2D" uid="uid://dlb4c3c5dua3m" path="res://Lightmask.webp" id="1_2xs8j"]
+[ext_resource type="Texture2D" uid="uid://b1sh5gw1bi7iu" path="res://icon.svg" id="1_g5ojd"]
+
+[sub_resource type="Environment" id="Environment_sxe1e"]
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.9
+glow_enabled = true
+glow_intensity = 7.1
+glow_strength = 2.0
+glow_bloom = 1.0
+fog_enabled = true
+fog_light_energy = 2.8
+volumetric_fog_enabled = true
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vjewd"]
+polygon = PackedVector2Array(310, 175, 309, 303, 181, 304, 181, 176)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -258.0
+offset_top = -118.0
+offset_right = 1303.0
+offset_bottom = 757.0
+color = Color(0.185383, 0.185383, 0.185383, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(92, 214)
+scale = Vector2(3.42, 3.44)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("1_2xs8j")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+rotation = 0.888373
+color = Color(0.883424, 0.29949, 0, 1)
+energy = 3.2
+shadow_enabled = true
+shadow_color = Color(0.20871, 0.20871, 0.20871, 0)
+shadow_filter = 1
+height = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sxe1e")
+
+[node name="Player" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(245, 241)
+texture = ExtResource("1_g5ojd")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Player"]
+occluder = SubResource("OccluderPolygon2D_vjewd")
